@@ -19,7 +19,7 @@ sinine_auto = pygame.transform.rotate(sinine_auto, 180)
 
 PosX, PosY = 420, 100
 posX, posY = 180, 200
-posx, posy = 260, 0
+posx, posy = 270, 0
 POSX, POSY = 330, 0
 
 speed = 4
