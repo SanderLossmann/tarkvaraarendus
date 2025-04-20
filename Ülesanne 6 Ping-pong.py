@@ -8,6 +8,8 @@ clock = pygame.time.Clock()
 
 pygame.mixer.music.load('music/song18.mp3')
 pygame.mixer.music.play(-1)
+pygame.mixer.music.set_volume(0.2)
+hit_sound = pygame.mixer.Sound('music/bleh.mp3')
 
 sinine = (51, 204, 255)
 
@@ -35,9 +37,9 @@ while running:
 
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RIGHT:
-                SpeedX = 4
+                SpeedX = 5
             if event.key == pygame.K_LEFT:
-                SpeedX = -4
+                SpeedX = -5
 
         elif event.type == pygame.KEYUP:
             if event.key == pygame.K_RIGHT or pygame.K_LEFT:
@@ -68,6 +70,7 @@ while running:
     if pall_rect.colliderect(alus_rect):
         if posY + Pall.get_height() <= PosY + 5:
             score += 1
+            pygame.mixer.Sound.play(hit_sound)
 
         speedY = -speedY
 
